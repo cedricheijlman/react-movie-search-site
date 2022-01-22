@@ -1,22 +1,22 @@
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
-function Movie({ src, title, voteAverage }) {
+import { Link } from "react-router-dom";
+import useFetch from "../useFetch";
+import Axios from "axios";
+function Movie({ src, title, voteAverage, movieId }) {
   return (
-    <div
-      onClick={() => {
-        alert("hello");
-      }}
-      className="discoveryMovie"
-    >
-      <img width="170" src={src} />
-      <div className="title">
-        <h5>{title}</h5>
+    <Link style={{ textDecoration: "none" }} to={"/movies/" + movieId}>
+      <div className="discoveryMovie">
+        <img width="170" src={src} />
+        <div className="title">
+          <h5>{title}</h5>
+        </div>
+        <div className="ratingMovie">
+          <StarIcon className="star"></StarIcon>
+          <span>{voteAverage}</span>
+        </div>
       </div>
-      <div className="ratingMovie">
-        <StarIcon className="star"></StarIcon>
-        <span>{voteAverage}</span>
-      </div>
-    </div>
+    </Link>
   );
 }
 

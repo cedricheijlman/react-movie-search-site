@@ -1,3 +1,7 @@
+a {
+  color: white;
+}
+
 /* NavBar */
 
 .App {
@@ -57,6 +61,8 @@
   }
 }
 
+/* Discovery */
+
 #discovery {
   display: flex;
   flex-direction: column;
@@ -101,6 +107,7 @@
   border: 1px solid rgba(255, 255, 255, 0.082);
   margin: 10px;
   border-radius: 10px;
+  height: 390px;
   display: flex;
   align-items: center;
   background-color: rgba(32, 34, 34, 0.089);

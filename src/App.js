@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 
 import Header from "./components/Header";
 import useFetch from "./useFetch";
-import Discovery from "./components/Discovery";
+import MovieInfoPage from "./components/MovieInfoPage";
+import HomePage from "./components/HomePage";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const { data: discoveryData } = useFetch(
@@ -14,8 +17,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-      <Discovery data={discoveryData} />
+      <Routes>
+        <Route path="/" element={<HomePage data={discoveryData} />} />
+        <Route path="/movies/:id" element={<MovieInfoPage />} />
+      </Routes>
     </div>
   );
 }

@@ -14,6 +14,7 @@ function Discovery({ data }) {
                 title={movie.title}
                 voteAverage={movie.vote_average}
                 key={movie.id}
+                movieId={movie.id}
               />
             );
           })}
