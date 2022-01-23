@@ -27,6 +27,8 @@ function Trailers({ movieDetails }) {
               ></iframe>
             );
           })}
+        {!movieDetails.videos.results ||
+          (movieDetails.videos.results.length == 0 && <p>No videos</p>)}
       </div>
     </div>
   );
