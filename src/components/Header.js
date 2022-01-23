@@ -1,13 +1,19 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <nav id="navbar">
-      <h1>Movie FinderUS</h1>
+      <Link to="/">
+        <h1>Movie FinderUS</h1>
+      </Link>
       <input placeholder="Search" />
       <ul>
-        <li>Home</li>
-        <li>Discover</li>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/discover">
+          <li>Discover</li>
+        </Link>
         <li>Movies</li>
         <li>TV Shows</li>
       </ul>

@@ -16,20 +16,27 @@ function MovieInfoPage() {
   return (
     <>
       {movieDetails && (
-        <div className="movieInfoCard">
-          <div
-            style={{
-              backgroundImage: `url(${
-                "https://image.tmdb.org/t/p/original/" +
-                movieDetails.backdrop_path
-              }), linear-gradient(red, yellow)`,
-            }}
-            className="textBox_movie"
-          >
-            <h1>{movieDetails.original_title}</h1>
-            <p>{movieDetails.overview}</p>
-            <p>{movieDetails.release_date}</p>
+        <div
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(9,9,121,0.07746848739495793) 0%, rgba(7,8,24,0.8603816526610644) 0%), url(${
+              "https://image.tmdb.org/t/p/original/" +
+              movieDetails.backdrop_path
+            })`,
+          }}
+          className="textBox_movie"
+        >
+          <img
+            src={
+              "https://image.tmdb.org/t/p/original/" + movieDetails.poster_path
+            }
+          />
+          <h2>{movieDetails.title}</h2>
+          <div className="genreList_movie">
+            {movieDetails.genres.map((genre) => {
+              return <span key={genre.id}>{genre.name}</span>;
+            })}
           </div>
+          <p>{movieDetails.overview}</p>
         </div>
       )}
     </>
