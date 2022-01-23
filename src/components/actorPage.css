@@ -1,23 +1,47 @@
 .actorPage__container {
   width: 100%;
-  margin-top: 50px;
+
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
 .actorPage__card {
-  background-color: rgb(23, 27, 42);
   flex-direction: column;
   min-width: 200px;
-  padding: 20px;
-  width: 80%;
+  padding: 50px 20px;
+  width: 100%;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   align-items: center;
   display: flex;
-  border-radius: 50px;
+}
+
+.actorPage__card h2 {
+  margin: 15px 0;
+}
+.actorPage__card h4 {
+  font-size: 20px;
+}
+
+.actorPage__card p {
+  font-weight: 300;
+}
+
+.actorPage__card div {
+  padding: 20px;
+  background-color: rgb(23, 23, 31);
+  text-align: center;
+  margin: 15px 0;
+  max-width: 700px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .actorPage__card img {
   border-radius: 10px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
   width: 200px;
 }

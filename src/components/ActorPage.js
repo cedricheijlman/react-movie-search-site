@@ -14,17 +14,37 @@ function ActorPage() {
     `https://api.themoviedb.org/3/person/${actorID}?api_key=${apiKey}&append_to_response=movie_credits,&language=en-US`
   );
 
+  console.log(actorData);
+
   return (
     <>
       {actorData && (
         <div className="actorPage__container">
           <div className="actorPage__card">
             <img src={imageLink + actorData.profile_path} />
+
             <h2>{actorData.name}</h2>
-            <h4>Biography</h4>
-            <p>{actorData.biography}</p>
-            <p>{actorData.place_of_birth}</p>
-            <p>{actorData.birthday}</p>
+
+            <div>
+              <h4>Biography</h4>
+              <p>{actorData.biography}</p>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                backgroundColor: "transparent",
+                flexDirection: "row",
+              }}
+            >
+              <div style={{ margin: "0 10px" }}>
+                <h4>Birthplace</h4>
+                <p>{actorData.place_of_birth}</p>
+              </div>
+              <div style={{ margin: "0 10px" }}>
+                <h4>Birthday</h4>
+                <p>{actorData.birthday}</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
