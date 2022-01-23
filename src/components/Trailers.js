@@ -21,6 +21,9 @@ function Trailers({ movieDetails }) {
                 width="420"
                 height="315"
                 src={`https://www.youtube.com/embed/${video.key}`}
+                allowFullScreen="true"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
               ></iframe>
             );
           })}

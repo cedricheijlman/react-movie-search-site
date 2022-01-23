@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../useFetch";
 import "./movieInfoPage.css";
 import StarIcon from "@mui/icons-material/Star";
-
+import { Link } from "react-router-dom";
 import Trailers from "./Trailers";
 import CastOverview from "./CastOverview";
 
@@ -14,7 +14,7 @@ function MovieInfoPage() {
   const imageLink = "https://image.tmdb.org/t/p/original/";
 
   // Movie Details, videos, recommendations, images, cast/credits
-  const { data: movieDetails } = useFetch(
+  const { data: movieDetails, error } = useFetch(
     `https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&append_to_response=videos,recommendations,images,credits,reviews&language=en-US`
   );
   console.log(movieDetails);
@@ -58,6 +58,26 @@ function MovieInfoPage() {
           <Trailers movieDetails={movieDetails} />
           <CastOverview cast={movieDetails.credits.cast} />
         </>
+      )}
+      {error && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            border: "1px solid grey",
+            marginTop: "150px",
+            padding: "25px",
+            borderRadius: "10px",
+          }}
+        >
+          <h2 style={{ color: "red" }}>404 ERROR</h2>
+          <h3>
+            <Link style={{ color: "white" }} to="/">
+              click to go back to Homepage
+            </Link>
+          </h3>
+        </div>
       )}
     </>
   );

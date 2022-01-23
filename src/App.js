@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import useFetch from "./useFetch";
 import MovieInfoPage from "./components/MovieInfoPage";
 import HomePage from "./components/HomePage";
+import ActorPage from "./components/ActorPage";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage data={discoveryData} />} />
         <Route path="/movies/:id" element={<MovieInfoPage />} />
+        <Route path="/actors/:id" element={<ActorPage />} />
       </Routes>
     </div>
   );
