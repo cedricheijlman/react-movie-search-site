@@ -17,6 +17,7 @@ function Trailers({ movieDetails }) {
           .map((video) => {
             return (
               <iframe
+                key={video.id}
                 width="420"
                 height="315"
                 src={`https://www.youtube.com/embed/${video.key}`}
