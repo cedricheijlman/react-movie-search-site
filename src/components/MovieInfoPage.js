@@ -3,12 +3,16 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../useFetch";
 import "./movieInfoPage.css";
 import StarIcon from "@mui/icons-material/Star";
+
 import Trailers from "./Trailers";
+import CastOverview from "./CastOverview";
+
 function MovieInfoPage() {
   // Current movieID , apiKey
   const movieID = window.location.pathname.slice(8);
   const apiKey = "52d81c56d9d5e31ed4d43c2bdda0dfc4";
   const imageLink = "https://image.tmdb.org/t/p/original/";
+
   // Movie Details, videos, recommendations, images, cast/credits
   const { data: movieDetails } = useFetch(
     `https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&append_to_response=videos,recommendations,images,credits,reviews&language=en-US`
@@ -52,6 +56,7 @@ function MovieInfoPage() {
             </div>
           </div>
           <Trailers movieDetails={movieDetails} />
+          <CastOverview cast={movieDetails.credits.cast} />
         </>
       )}
     </>
