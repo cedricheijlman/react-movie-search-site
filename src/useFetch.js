@@ -10,7 +10,7 @@ function useFetch(url) {
     setLoading(true);
     Axios.get(url)
       .then((response) => {
-        setData(response.data.results);
+        setData(response.data);
       })
       .catch((err) => {
         setError(err);

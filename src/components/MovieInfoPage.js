@@ -1,35 +1,39 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
-import useMovieDetails from "../useMovieDetails";
+import useFetch from "../useFetch";
+import "./movieInfoPage.css";
 
 function MovieInfoPage() {
-  const { data: movieDetails } = useMovieDetails();
+  // Current movieID , apiKey
+  const movieID = window.location.pathname.slice(8);
+  const apiKey = "52d81c56d9d5e31ed4d43c2bdda0dfc4";
 
-  /*
-  useEffect(() => {
-    Axios.get(
-      `https://api.themoviedb.org/3/movie/${window.location.pathname.slice(
-        8
-      )}?api_key=52d81c56d9d5e31ed4d43c2bdda0dfc4&language=en-US`
-    )
-      .then((res) => {
-        setMovie(res.data);
-      })
-      .catch(function (error) {
-        if (error.response) {
-          // Request made and server responded
-          console.log("Error Sorry");
-        } else if (error.request) {
-          // The request was made but no response was received
-          console.log(error.request);
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.log("Error", error.message);
-        }
-      });
-  }, []);*/
-
-  return <div>{movieDetails && <h1>{movieDetails.original_title}</h1>}</div>;
+  // Movie Details, videos, recommendations, images, cast/credits
+  const { data: movieDetails } = useFetch(
+    `https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&append_to_response=videos,recommendations,images,credits,reviews&language=en-US`
+  );
+  console.log(movieDetails);
+  return (
+    <>
+      {movieDetails && (
+        <div className="movieInfoCard">
+          <div
+            style={{
+              backgroundImage: `url(${
+                "https://image.tmdb.org/t/p/original/" +
+                movieDetails.backdrop_path
+              }), linear-gradient(red, yellow)`,
+            }}
+            className="textBox_movie"
+          >
+            <h1>{movieDetails.original_title}</h1>
+            <p>{movieDetails.overview}</p>
+            <p>{movieDetails.release_date}</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default MovieInfoPage;

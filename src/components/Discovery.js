@@ -7,7 +7,7 @@ function Discovery({ data }) {
       <h2>Discovery</h2>
       <div id="discoveryRow">
         {data &&
-          data.map((movie) => {
+          data.results.map((movie) => {
             return (
               <Movie
                 src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}

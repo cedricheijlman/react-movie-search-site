@@ -1,0 +1,24 @@
+.movieInfoCard {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(26, 26, 26);
+}
+
+.textBox_movie {
+  background-position: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+  height: 80%;
+  border-radius: 0 0 150px 150px;
+}
+
+.textBox_movie p {
+  width: 50%;
+}
