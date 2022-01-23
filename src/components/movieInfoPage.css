@@ -10,7 +10,8 @@
   padding: 50px 0;
   color: rgb(230, 232, 238);
   text-align: center;
-  overflow: fix;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 .textBox_movie img {
   width: 13%;
@@ -44,4 +45,29 @@
 
 .genreList_movie span {
   margin: 0 5px;
+}
+
+.textBox_movie .ratingMovie {
+  margin-top: 15px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(226, 226, 26);
+}
+
+.trailers {
+  display: flex;
+
+  margin: 30px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trailers iframe {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  margin: 25px;
+  border: 2px solid rgb(23, 37, 54);
+
+  border-radius: 10px;
 }
