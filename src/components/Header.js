@@ -52,7 +52,7 @@ function Header() {
           <div className="searchResultContainer">
             {queryResult.slice(0, 5).map((movie) => {
               return (
-                <a href={`/movies/${movie.id}`}>
+                <Link to={`/movies/${movie.id}`}>
                   <div className="queryMovie">
                     <img
                       width={60}
@@ -63,7 +63,7 @@ function Header() {
                       <h4> {movie.title}</h4>
                     </div>
                   </div>
-                </a>
+                </Link>
               );
             })}
             <div>Get All Results</div>
