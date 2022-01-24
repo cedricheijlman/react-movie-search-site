@@ -9,7 +9,7 @@ function Header() {
   const [search, setSearch] = useState("");
   const [queryResult, setQueryResult] = useState([]);
   const [scroll, setScroll] = useState(false);
-  const [random, setRandom] = useState(false);
+
   useEffect(() => {
     if (search !== null && search !== "") {
       Axios.get(
