@@ -49,6 +49,32 @@ function ActorPage() {
         </div>
       )}
 
+      {actorData && (
+        <div id="actorMovieCredits">
+          <h2>Known for</h2>
+          <div className="actorMovieCredits__row">
+            {actorData.movie_credits.cast.slice(0, 12).map((movie) => {
+              return (
+                <Link to={`/movies/${movie.id}`}>
+                  <div key={movie.id} className="actorMovieCredits__movie">
+                    <img
+                      src={
+                        movie.poster_path
+                          ? imageLink + movie.poster_path
+                          : "https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg"
+                      }
+                    />
+                    <div className="knownFor__movieName">
+                      <h4>{movie.title}</h4>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {error && (
         <div
           style={{

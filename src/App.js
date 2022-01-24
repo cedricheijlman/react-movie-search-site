@@ -21,9 +21,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage data={discoveryData} />} />
         <Route
-          key={math.random() * 3}
           path="/movies/:id"
-          element={<MovieInfoPage />}
+          element={
+            <MovieInfoPage key={Math.floor(Math.random() * (99 - 5 + 1) + 5)} />
+          }
         />
         <Route path="/actors/:id" element={<ActorPage />} />
       </Routes>

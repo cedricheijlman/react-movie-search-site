@@ -9,7 +9,7 @@ function Header() {
   const [search, setSearch] = useState("");
   const [queryResult, setQueryResult] = useState([]);
   const [scroll, setScroll] = useState(false);
-
+  const [random, setRandom] = useState(false);
   useEffect(() => {
     if (search !== null && search !== "") {
       Axios.get(
@@ -52,7 +52,12 @@ function Header() {
           <div className="searchResultContainer">
             {queryResult.slice(0, 5).map((movie) => {
               return (
-                <Link to={`/movies/${movie.id}`}>
+                <Link
+                  onClick={() => {
+                    this.forceUpdate();
+                  }}
+                  to={`/movies/${movie.id}`}
+                >
                   <div className="queryMovie">
                     <img
                       width={60}
