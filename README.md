@@ -1,4 +1,4 @@
-SITE LINK [https://reactmoviefinder3.netlify.app/](Site Link)
+SITE LINK [https://reactmoviefinder3.netlify.app/]
 
 
 ## Available Scripts
