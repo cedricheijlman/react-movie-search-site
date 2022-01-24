@@ -19,6 +19,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Redirect from="/movies/:id" to="/movies/:id" />
         <Route path="/" element={<HomePage data={discoveryData} />} />
         <Route path="/movies/:id" element={<MovieInfoPage />} />
         <Route path="/actors/:id" element={<ActorPage />} />
