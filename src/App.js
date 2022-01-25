@@ -24,7 +24,8 @@ function App() {
           element={<MovieInfoPage currentMovie={currentMovie} />}
         />
         <Route path="/actors/:id" element={<ActorPage />} />
-        <Route path="/discover/:id" element={<DiscoverPage />} />
+        <Route path="/discover" element={<DiscoverPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
   );

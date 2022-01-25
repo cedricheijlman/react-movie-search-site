@@ -72,7 +72,6 @@ function Header({ setCurrentMovie }) {
                 </Link>
               );
             })}
-            <div>Get All Results</div>
           </div>
         )}
       </div>
@@ -80,7 +79,7 @@ function Header({ setCurrentMovie }) {
         <Link to="/">
           <li>Home</li>
         </Link>
-        <Link to="/discover/1">
+        <Link to="/discover">
           <li>Discover</li>
         </Link>
         <li>Movies</li>
