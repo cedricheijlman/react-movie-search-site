@@ -34,7 +34,7 @@ function MovieInfoPage({ currentMovie }) {
   console.log(movieDetails);
   return (
     <>
-      {movieDetails && (
+      {movieDetails && movieDetails !== null && movieDetails !== "" && (
         <>
           <div
             style={{
