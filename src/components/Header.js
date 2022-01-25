@@ -2,7 +2,7 @@ import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ setCurrentMovie }) {
   const API_key = "52d81c56d9d5e31ed4d43c2bdda0dfc4";
   const imageLink = "https://image.tmdb.org/t/p/original/";
 
@@ -52,7 +52,10 @@ function Header() {
           <div className="searchResultContainer">
             {queryResult.slice(0, 5).map((movie) => {
               return (
-                <Link to={`/movies/${movie.id}`}>
+                <Link
+                  onClick={() => setCurrentMovie(movie.id)}
+                  to={`/movies/${movie.id}`}
+                >
                   <div className="queryMovie">
                     <img
                       width={60}

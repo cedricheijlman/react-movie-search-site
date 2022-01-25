@@ -7,18 +7,30 @@ import { Link } from "react-router-dom";
 import Trailers from "./Trailers";
 import CastOverview from "./CastOverview";
 
-function MovieInfoPage() {
+function MovieInfoPage({ currentMovie }) {
   // Current movieID , apiKey
 
   const apiKey = "52d81c56d9d5e31ed4d43c2bdda0dfc4";
   const imageLink = "https://image.tmdb.org/t/p/original/";
 
   // Movie Details, videos, recommendations, images, cast/credits
-  const { data: movieDetails, error } = useFetch(
-    `https://api.themoviedb.org/3/movie/${window.location.pathname.slice(
-      8
-    )}?api_key=${apiKey}&append_to_response=videos,recommendations,images,credits,reviews&language=en-US`
-  );
+  const [movieDetails, setMovieDetails] = useState(null);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    Axios.get(
+      `https://api.themoviedb.org/3/movie/${window.location.pathname.slice(
+        8
+      )}?api_key=${apiKey}&append_to_response=videos,recommendations,images,credits,reviews&language=en-US`
+    ).then((res) => {
+      setMovieDetails(res.data);
+    });
+  }, [currentMovie]);
+
+  // const { data: movieDetails, error } = useFetch(
+  // `https://api.themoviedb.org/3/movie/${window.location.pathname.slice(
+  //     8
+  //   )}?api_key=${apiKey}&append_to_response=videos,recommendations,images,credits,reviews&language=en-US`
+  // );
   console.log(movieDetails);
   return (
     <>
