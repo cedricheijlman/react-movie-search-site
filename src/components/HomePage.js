@@ -1,11 +1,13 @@
 import React from "react";
 import Discovery from "./homepage/Discovery.js";
+import LatestMovies from "./homepage/LatestMovies.js";
 import TopRated from "./homepage/TopRated.js";
 function HomePage() {
   return (
     <>
-      <Discovery />
+      <LatestMovies />
       <TopRated />
+      <Discovery />
     </>
   );
 }
