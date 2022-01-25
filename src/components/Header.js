@@ -53,7 +53,10 @@ function Header({ setCurrentMovie }) {
             {queryResult.slice(0, 5).map((movie) => {
               return (
                 <Link
-                  onClick={() => setCurrentMovie(movie.id)}
+                  onClick={() => {
+                    setCurrentMovie(movie.id);
+                    setScroll(false);
+                  }}
                   to={`/movies/${movie.id}`}
                 >
                   <div className="queryMovie">
