@@ -93,6 +93,7 @@ function MovieInfoPage({ currentMovie }) {
           </h3>
         </div>
       )}
+      <h1>armor</h1>
     </>
   );
 }
