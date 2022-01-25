@@ -1,7 +1,7 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
-
+import "./DiscoverPage.css";
 function DiscoverPage() {
   const [data, setData] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
@@ -23,11 +23,22 @@ function DiscoverPage() {
   };
 
   return (
-    <div>
-      {data &&
-        data.map((test) => {
-          return <Movie>Hello</Movie>;
-        })}
+    <div id="discoverPage">
+      <h2>Discover Movies</h2>
+      <div className="discoverPage__movies">
+        {data &&
+          data.map((movie) => {
+            return (
+              <Movie
+                src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
+                title={movie.title}
+                voteAverage={movie.vote_average}
+                key={movie.id}
+                movieId={movie.id}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }

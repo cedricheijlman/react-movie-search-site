@@ -1,0 +1,30 @@
+#discoverPage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+#discoverPage h2 {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 35px;
+}
+
+.discoverPage__movies {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.discoverPage__movies div {
+  width: 170px;
+  text-align: center;
+}
+
+.discoverPage__movies .ratingMovie {
+  width: 100px;
+}
