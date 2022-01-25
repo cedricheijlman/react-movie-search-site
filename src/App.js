@@ -7,6 +7,7 @@ import useFetch from "./useFetch";
 import MovieInfoPage from "./components/MovieInfoPage";
 import HomePage from "./components/HomePage";
 import ActorPage from "./components/ActorPage";
+import DiscoverPage from "./components/DiscoverPage";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function App() {
           element={<MovieInfoPage currentMovie={currentMovie} />}
         />
         <Route path="/actors/:id" element={<ActorPage />} />
+        <Route path="/discover/:id" element={<DiscoverPage />} />
       </Routes>
     </div>
   );

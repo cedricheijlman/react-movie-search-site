@@ -80,7 +80,7 @@ function Header({ setCurrentMovie }) {
         <Link to="/">
           <li>Home</li>
         </Link>
-        <Link to="/discover">
+        <Link to="/discover/1">
           <li>Discover</li>
         </Link>
         <li>Movies</li>
