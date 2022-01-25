@@ -24,12 +24,7 @@ function App() {
         <Route path="/" element={<HomePage data={discoveryData} />} />
         <Route
           path="/movies/:id"
-          element={
-            <MovieInfoPage
-              currentMovie={currentMovie}
-              key={Math.floor(Math.random() * (99 - 5 + 1) + 5)}
-            />
-          }
+          element={<MovieInfoPage currentMovie={currentMovie} />}
         />
         <Route path="/actors/:id" element={<ActorPage />} />
       </Routes>
