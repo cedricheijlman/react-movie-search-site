@@ -1,10 +1,14 @@
 import React from "react";
-import Movie from "./Movie";
+import useFetch from "../../useFetch.js";
+import Movie from "../Movie";
 
-function Discovery({ data }) {
+function TopRated() {
+  const { data } = useFetch(
+    "https://api.themoviedb.org/3/movie/top_rated?api_key=52d81c56d9d5e31ed4d43c2bdda0dfc4&language=en-US&page=1"
+  );
   return (
     <div id="discovery">
-      <h2>Discovery</h2>
+      <h2>Top Rated Movies</h2>
       <div id="discoveryRow">
         {data &&
           data.results.map((movie) => {
@@ -23,4 +27,4 @@ function Discovery({ data }) {
   );
 }
 
-export default Discovery;
+export default TopRated;
