@@ -52,12 +52,7 @@ function Header() {
           <div className="searchResultContainer">
             {queryResult.slice(0, 5).map((movie) => {
               return (
-                <Link
-                  onClick={() => {
-                    this.forceUpdate();
-                  }}
-                  to={`/movies/${movie.id}`}
-                >
+                <Link to={`/w_movies/${movie.id}`}>
                   <div className="queryMovie">
                     <img
                       width={60}

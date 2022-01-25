@@ -8,7 +8,7 @@ import MovieInfoPage from "./components/MovieInfoPage";
 import HomePage from "./components/HomePage";
 import ActorPage from "./components/ActorPage";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   const { data: discoveryData } = useFetch(
