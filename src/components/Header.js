@@ -38,7 +38,6 @@ function Header({ setCurrentMovie }) {
       <div
         style={{
           positon: "relative",
-          border: "1px solid green",
           width: "23%",
         }}
       >
