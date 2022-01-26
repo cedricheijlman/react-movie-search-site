@@ -33,7 +33,7 @@ function Header({ setCurrentMovie }) {
   return (
     <nav id="navbar">
       <Link to="/">
-        <h1>Movie FinderUS</h1>
+        <h1>Movie Finder</h1>
       </Link>
       <div
         style={{
