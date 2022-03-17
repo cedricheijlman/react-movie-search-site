@@ -81,8 +81,6 @@ function Header({ setCurrentMovie }) {
         <Link to="/discover">
           <li>Discover</li>
         </Link>
-        <li>Movies</li>
-        <li>TV Shows</li>
       </ul>
     </nav>
   );
